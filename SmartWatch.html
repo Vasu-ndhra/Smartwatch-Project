@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Watch</title>
+    <link rel="stylesheet" href="./SW.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header class="row justify-content-center">
+        <img class="col-2 mt-1"
+            src="./img/1-12080_amazon-logo-png-amazon-white-text-logo-transparent-removebg-preview.png"
+            alt="Amazon_logo">
+    </header>
+    <div class="container-fluid">
+        <section class="d-flex">
+            <div class="watch" id="show">
+                <img src="./img/BlackWatch.png" id="myimg" alt="">
+                <!-- timer -->
+                <span class="col" id="time">
+                </span>
+                <!-- heart rate -->
+                <i class="fa-solid fa-heart fa-beat fa-3x text-danger" id="heart"></i>
+
+                <h5 class="border text-danger">98bp</h5>
+
+
+            </div>
+
+            <div class="content">
+                <h2 class="mt-4">FIT-19 Smart Watch</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic alias veniam vel voluptates,
+                    reprehenderit nihil sed qui saepe, aperiam eum inventore! Nisi hic deserunt enim provident
+                    libero
+                    vero labore magni!</p>
+                <h4>Select Color</h4>
+                <div class="d-flex">
+                    <div id="b1" onclick="black()"></div>
+                    <div id="b2" onclick="red()"></div>
+                    <div id="b3" onclick="blue()"></div>
+                    <div id="b4" onclick="purple()"></div>
+                </div>
+                <h4 class="mt-3">Features</h4>
+                <button class="btn btn-outline-secondary" id="time-btn" onclick="time()">Timer</button>
+                <button class="btn btn-outline-secondary" id="heart-btn" onclick="heart()">Heart Rate</button>
+                <br>
+                <button class="btn btn-warning mt-4">Buy Now</button>
+            </div>
+    </div>
+
+
+    </section>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<script>
+    setInterval(myTimer, 1000);
+    function myTimer() {
+        const date = new Date();
+        document.getElementById("time").innerHTML = date.toLocaleTimeString();
+    }
+    $('#heart').hide();
+    function time() {
+        $('#time').toggle(); //hide show simontaneoustly
+        $('#heart').toggle();
+
+    }
+    function heart() {
+        $('#heart').toggle();
+        $('#time').toggle();
+    }
+    var img = document.getElementById('myimg');
+    function black() {
+        img.src = "img/BlackWatch.png"
+    }
+    function red() {
+        img.src = "img/red.png"
+    }
+    function blue() {
+        img.src = "img/blue.png"
+     }
+    function purple() { 
+        img.src = "img/purple.png"
+    }
+</script>
+
+</html>
